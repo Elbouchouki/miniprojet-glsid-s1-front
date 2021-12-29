@@ -24,10 +24,9 @@ const SidebarItem = props => {
     )
 }
 
-const Sidebar = ({pathname}) => {
+const Sidebar = (props) => {
 
-    const activeItem = sidebar_items.findIndex(item => item.route === pathname)
-
+    const activeItem = sidebar_items.findIndex(item => item.route === props.location.pathname)
     return (
         <div className='sidebar'>
             <div className="sidebar__logo">

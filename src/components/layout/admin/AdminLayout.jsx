@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react'
 import Sidebar from '../../sidebar/Sidebar'
-import LandingRoutes from '../../LandingRoutes'
 import TopNav from '../../topnav/TopNav'
-
+import "./admin.css"
 import { useSelector, useDispatch } from 'react-redux'
 
 import ThemeAction from "../../../redux/actions/ThemeAction"

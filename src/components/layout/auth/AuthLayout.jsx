@@ -1,13 +1,13 @@
 import React from 'react'
 
-const LandingLayout = (props) => {
+const AuthLayout = (props) => {
     
     return (
         <div >
-          <div>Layout Landing</div>
+          <div>Layout Auth</div>
                     {props.children}
         </div>
     )
 }
 
-export default LandingLayout
+export default AuthLayout

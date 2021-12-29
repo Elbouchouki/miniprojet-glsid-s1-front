@@ -102,15 +102,50 @@ const Dashboard = () => {
 
     return (
         <div>
-            <h2 className="page-header">Dashboard</h2>
+            <h2 className="page-header">Parametrage</h2>
             <div className="row">
-                
-                
-                
-                <div className="col-12">
+                <div className="col-6">
+                    <div className="row">
+                        {
+                            statusCards.map((item, index) => (
+                                <div className="col-6" key={index}>
+                                    <StatusCard
+                                        icon={item.icon}
+                                        count={item.count}
+                                        title={item.title}
+                                    />
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+                <div className="col-6">
+                    <div className="card full-height">
+                       asdasd
+                    </div>
+                </div>
+                <div className="col-4">
                     <div className="card">
                         <div className="card__header">
-                            <h3>List Blabla</h3>
+                            <h3>top customers</h3>
+                        </div>
+                        <div className="card__body">
+                            {/* <Table
+                                headData={topCustomers.head}
+                                renderHead={(item, index) => renderCusomerHead(item, index)}
+                                bodyData={topCustomers.body}
+                                renderBody={(item, index) => renderCusomerBody(item, index)}
+                            /> */}
+                        </div>
+                        <div className="card__footer">
+                            <Link to='/'>view all</Link>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-8">
+                    <div className="card">
+                        <div className="card__header">
+                            <h3>latest orders</h3>
                         </div>
                         <div className="card__body">
                             <Table
