@@ -2,15 +2,15 @@ import React ,{Component}from 'react'
 
 import { Route } from 'react-router-dom'
 
-import AuthLayout from './../layout/auth/AuthLayout';
+import ErrorLayout from '../layout/error/ErrorLayout';
 
-const AuthRoutes = ({component:Component,...props}) => {
+const ErrorRoutes = ({component:Component,...props}) => {
     return (
         <Route {...props} render={props => (  
-            <AuthLayout>  
+            <ErrorLayout>  
                 <Component {...props} />  
-            </AuthLayout>  
+            </ErrorLayout>  
         )} />  
     )
 }
-export default AuthRoutes
+export default ErrorRoutes

@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-import { Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
-import Home from '../../pages/landing/Home'
+import LandingLayout from './../layout/landing/LandingLayout';
 
-const LandingRoutes = () => {
+const LandingRoutes = ({component:Component,...props}) => {
     return (
-        <Switch>
-            <Route path='/home' exact component={Home}/>
-        </Switch>
+        <Route {...props} render={props => (  
+            <LandingLayout>  
+                <Component {...props} />  
+            </LandingLayout>  
+        )} />  
     )
 }
-
 export default LandingRoutes
