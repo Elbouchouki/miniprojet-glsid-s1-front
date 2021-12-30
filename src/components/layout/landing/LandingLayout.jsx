@@ -2,8 +2,6 @@ import React from 'react'
 import FooterLanding from './FooterLanding'
 const LandingLayout = (props) => {
     
-
-
     return (
         <div >
           <div>Layout Landing</div>

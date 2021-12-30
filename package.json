@@ -1,34 +1,41 @@
 {
-  "name": "vaccination",
+  "name": "gestpark-elbouchouki",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "^6.4.3",
-    "@emotion/react": "^11.7.1",
-    "@emotion/styled": "^11.6.0",
-    "@tailwindcss/forms": "^0.4.0",
+    "@progress/kendo-data-query": "^1.5.5",
+    "@progress/kendo-licensing": "^1.2.0",
+    "@progress/kendo-react-excel-export": "^4.8.0",
+    "@reduxjs/toolkit": "^1.6.1",
+    "@rsuite/icons": "^1.0.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "apexcharts": "^3.27.1",
-    "axios": "^0.24.0",
-    "framer-motion": "^5.5.5",
+    "axios": "^0.21.4",
+    "date-fns": "^2.23.0",
+    "dotenv": "^10.0.0",
+    "group-array": "^1.0.0",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-apexcharts": "^1.3.9",
-    "react-date-range": "^1.4.0",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
+    "react-particles-js": "^3.5.3",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "redux": "^4.1.0",
-    "rsuite": "^5.4.3",
+    "react-to-print": "^2.13.0",
+    "redux": "^4.1.1",
+    "rsuite": "^5.0.0",
+    "tsparticles": "^1.35.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -48,11 +55,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.2.17",
-    "autoprefixer": "^9.8.8",
-    "postcss": "^7.0.39",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }
