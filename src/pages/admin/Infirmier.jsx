@@ -1,22 +1,29 @@
-import React ,{useState}from 'react'
+/* eslint-disable no-restricted-globals */
+import React ,{useState} from 'react'
+import Button from 'rsuite/Button';
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
 import { Popover ,Whisper,Checkbox,Dropdown,IconButton,Divider} from 'rsuite';
-import { Gear } from '@rsuite/icons';
+import Placeholder from 'rsuite/Placeholder';
+import EditIcon from '@rsuite/icons/Edit';
+import TrashIcon from '@rsuite/icons/Trash';
 import ToolsIcon from '@rsuite/icons/Tools';
+import FlexboxGrid from 'rsuite/FlexboxGrid';
+import Modal from 'rsuite/Modal';
+const { Paragraph } = Placeholder;
 const NameCell = ({ rowData, dataKey, ...props }) => {
     const speaker = (
       <Popover title="Description">
         <p>
-          <b>Name:</b> {`${rowData.firstName} ${rowData.lastName}`}{' '}
+          <b>Nom:</b> {rowData.Nom}{' '}
         </p>
         <p>
-          <b>Email:</b> {rowData.email}{' '}
+          <b>Prénom:</b> {rowData.Prenom}{' '}
         </p>
         <p>
-          <b>Company:</b> {rowData.companyName}{' '}
+          <b>Téléphone:</b> {rowData.telephone}{' '}
         </p>
         <p>
-          <b>Sentence:</b> {rowData.sentence}{' '}
+          <b>Adresse:</b> {rowData.Adresse}{' '}
         </p>
       </Popover>
     );
@@ -31,7 +38,7 @@ const NameCell = ({ rowData, dataKey, ...props }) => {
   };
   
   const ImageCell = ({ rowData, dataKey, ...props }) => (
-    <Cell {...props} style={{ padding: 0 }}>
+    <Cell  {...props} style={{ padding: 0 }}>
       <div
         style={{
           width: 40,
@@ -49,7 +56,7 @@ const NameCell = ({ rowData, dataKey, ...props }) => {
   );
   
   const CheckCell = ({ rowData, onChange, checkedKeys, dataKey, ...props }) => (
-    <Cell {...props} style={{ padding: 0 }}>
+    <Cell  {...props} style={{ padding: 0 }}>
       <div style={{ lineHeight: '46px' }}>
         <Checkbox
           value={rowData[dataKey]}
@@ -81,56 +88,62 @@ const NameCell = ({ rowData, dataKey, ...props }) => {
   
   const ActionCell = ({ rowData, dataKey, ...props }) => {
     function handleAction() {
-      alert(`id:${rowData[dataKey]}`);
+      confirm("Êtes-vous sûr de vouloir supprimer? ");
     }
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+  
     return (
-      <Cell {...props} className="link-group">
-        <IconButton appearance="subtle" onClick={handleAction} icon={<Gear />} />
-        <Divider vertical />
-        <Whisper placement="autoVerticalStart" trigger="click" speaker={renderMenu}>
-          <IconButton appearance="subtle" icon={<ToolsIcon />} />
-        </Whisper>
-      </Cell>
-    );
+      <><Modal open={open} onClose={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Modal Title</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Paragraph />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={handleClose} appearance="primary">
+            Ok
+          </Button>
+          <Button onClick={handleClose} appearance="subtle">
+            Cancel
+          </Button>
+        </Modal.Footer>
+      </Modal><Cell {...props} className="link-group">
+          <IconButton appearance="subtle" onClick={handleOpen} icon={<EditIcon />} />
+          <IconButton appearance="subtle" onClick={handleAction} icon={<TrashIcon />} />
+          <Divider vertical />
+          <Whisper placement="autoVerticalStart" trigger="click" speaker={renderMenu}>
+            <IconButton appearance="subtle" icon={<ToolsIcon />} />
+          </Whisper>
+        </Cell></>
+    )
   };
 
 const Dashboard = () => {
     const data =[
         {
           "id": 1,
-          "avartar": "https://via.placeholder.com/40x40/3498ff/FFFFFF?text=E",
-          "city": "New Amieshire",
-          "email": "Leora13@yahoo.com",
-          "firstName": "Ernest Schuppe SchuppeSchuppeSchuppeSchuppeSchuppeSchuppe Schuppe",
-          "lastName": "Schuppe",
-          "street": "Ratke Port",
-          "zipCode": "17026-3154",
-          "date": "2016-09-23T07:57:40.195Z",
-          "bs": "global drive functionalities",
-          "catchPhrase": "Intuitive impactful software",
-          "companyName": "Lebsack - Nicolas",
-          "words": "saepe et omnis",
-          "sentence": "Quos aut sunt id nihil qui.",
-          "stars": 820,
-          "followers": 70
+          "avartar": "https://via.placeholder.com/40x40/3498ff/FFFFFF?text=Z",
+          "Prenom": "Najwa",
+          "Nom": "ZRAIDI",
+          "telephone": "069565847",
+          "Adresse" :"lot hind",
+          "medcinId":5,
+          "userId":2,
+          "centreId":7
         },
         {
           "id": 2,
-          "avartar": "https://via.placeholder.com/40x40/3498ff/FFFFFF?text=J",
-          "city": "New Gust",
-          "email": "Mose_Gerhold51@yahoo.com",
-          "firstName": "Janis",
-          "lastName": "Vandervort",
-          "street": "Dickinson Keys",
-          "zipCode": "43767",
-          "date": "2017-03-06T09:59:12.551Z",
-          "bs": "e-business maximize bandwidth",
-          "catchPhrase": "De-engineered discrete secured line",
-          "companyName": "Glover - Hermiston",
-          "words": "deleniti dolor nihil",
-          "sentence": "Illo quidem libero corporis laborum.",
-          "stars": 1200,
-          "followers": 170
+          "avartar": "https://via.placeholder.com/40x40/3498ff/FFFFFF?text=H",
+          "Prenom": "Fatiza",
+          "Nom": "Houd",
+          "telephone": "069565847",
+          "Adresse" :"lot hind",
+          "medcinId":8,
+          "userId":4,
+          "centreId":8
         }];
     const [checkedKeys, setCheckedKeys] = useState([]);
     let checked = false;
@@ -152,13 +165,24 @@ const Dashboard = () => {
         const keys = checked ? [...checkedKeys, value] : checkedKeys.filter(item => item !== value);
         setCheckedKeys(keys);
     }
+
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     return (
         <div>
             <h2 className="page-header">Infirmier</h2>
             <div className="row">
                 <div className="card" style={{width:'100%'}}>
+                <FlexboxGrid justify="space-around">
+                <FlexboxGrid.Item colspan={4}></FlexboxGrid.Item>
+                <FlexboxGrid.Item colspan={4}></FlexboxGrid.Item>
+                <FlexboxGrid.Item colspan={4}></FlexboxGrid.Item>
+                <Button color="blue" onClick={handleOpen}>Ajouter un nouveau infirmier</Button>
+                  </FlexboxGrid>
                     <Table height={300} data={data} id="table">
-                        <Column width={50   } align="center">
+                      
+                        <Column width={50} align="center">
                             <HeaderCell style={{ padding: 0 }}>
                             <div style={{ lineHeight: '40px' }}>
                                 <Checkbox
@@ -171,22 +195,26 @@ const Dashboard = () => {
                             </HeaderCell>
                             <CheckCell dataKey="id" checkedKeys={checkedKeys} onChange={handleCheck} />
                         </Column>
-                        <Column width={100} align="center">
+                        <Column height={300} width={100} align="center">
                             <HeaderCell>Avartar</HeaderCell>
                             <ImageCell dataKey="avartar" />
                         </Column>
 
-                        <Column width={160}>
-                            <HeaderCell>First Name</HeaderCell>
-                            <NameCell dataKey="firstName" />
+                        <Column width={150}>
+                            <HeaderCell>Nom</HeaderCell>
+                            <NameCell dataKey="Nom" />
                         </Column>
-                        <Column width={160}>
-                            <HeaderCell>First Name</HeaderCell>
-                            <NameCell dataKey="firstName" />
+                        <Column width={150}>
+                            <HeaderCell> Prenom </HeaderCell>
+                            <NameCell dataKey="Prenom" />
                         </Column>
-                        <Column width={300}>
-                            <HeaderCell>Email</HeaderCell>
-                            <Cell>{rowData => <a href={`mailto:${rowData.email}`}>{rowData.email}</a>}</Cell>
+                        <Column width={100}>
+                            <HeaderCell>Téléphone</HeaderCell>
+                            <NameCell dataKey="telephone" />
+                        </Column>
+                        <Column width={200}>
+                            <HeaderCell>Adresse</HeaderCell>
+                            <NameCell dataKey="Adresse" />
                         </Column>
 
                         <Column width={200}>
@@ -196,7 +224,24 @@ const Dashboard = () => {
                     </Table>
                 </div>
             </div>
+            <Modal open={open} onClose={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Modal Title</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Paragraph />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={handleClose} appearance="primary">
+            Ok
+          </Button>
+          <Button onClick={handleClose} appearance="subtle">
+            Cancel
+          </Button>
+        </Modal.Footer>
+      </Modal>
         </div>
+    
     )
 }
 
