@@ -178,7 +178,7 @@ const Dashboard = () => {
                 <FlexboxGrid.Item colspan={4}></FlexboxGrid.Item>
                 <FlexboxGrid.Item colspan={4}></FlexboxGrid.Item>
                 <FlexboxGrid.Item colspan={4}></FlexboxGrid.Item>
-                <Button color="red" onClick={handleOpen} appearance="primary" >Ajouter un nouveau infirmier</Button>
+                <Button color="bleu" onClick={handleOpen} appearance="primary" >Ajouter un nouveau infirmier</Button>
                   </FlexboxGrid>
                     <Table height={300} data={data} id="table">
                       
@@ -229,7 +229,7 @@ const Dashboard = () => {
           <Modal.Title>Modal Title</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          
+
           <Paragraph />
         </Modal.Body>
         <Modal.Footer>
