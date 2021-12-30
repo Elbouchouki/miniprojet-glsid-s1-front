@@ -45,6 +45,7 @@
   margin: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
 }
 
 body {
@@ -69,7 +70,12 @@ button {
   outline: 0;
   color: var(--txt-color);
 }
-
+button:active {
+  outline: 0;
+}
+button:focus {
+  outline: 0;
+}
 ul {
   list-style-type: none;
 }

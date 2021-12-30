@@ -8,13 +8,18 @@ import { Provider } from 'react-redux'
 
 import rootReducer from './redux/reducers'
 
+// import 'rsuite/dist/rsuite.min.css'
+
+import "./styles/index.css"
+import "./styles/tailwind.css"
+
 import './assets/boxicons-2.0.7/css/boxicons.min.css'
 import './assets/css/grid.css'
 import './assets/css/theme.css'
 import './assets/css/index.css'
 
-import "./styles/index.css"
-import "./styles/tailwind.css"
+
+
 
 import Routing from './components/Routing';
 
@@ -24,12 +29,13 @@ const store = createStore(
 
 document.title = 'Tua CRM'
 
+
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <Routing />
-    </React.StrictMode>
-  </Provider>,
+    <Provider store={store}>
+      <React.StrictMode>
+        <Routing />
+      </React.StrictMode>
+    </Provider>,
   document.getElementById('root')
 );
 

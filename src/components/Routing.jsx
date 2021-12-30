@@ -18,6 +18,8 @@ import Parametrage from '../pages/admin/Parametrage';
 import Reservation from '../pages/admin/Reservation';
 
 import Home from '../pages/landing/Home';
+import Reserving from '../pages/landing/Reserving';
+
 
 import Login from '../pages/auth/Login';
 import Register from './../pages/auth/Register';
@@ -39,6 +41,7 @@ const Routing = () => {
                 <AdminRoutes path="/reservation" component={Reservation} />
 
                 <LandingRoutes exact  path="/" component={Home} />
+                <AuthRoutes  path="/reserving" component={Reserving} />
 
                 <AuthRoutes path="/login" component={Login} />
                 <AuthRoutes path="/register" component={Register} />

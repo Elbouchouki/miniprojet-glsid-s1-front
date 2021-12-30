@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Home = () => {
+const Reserving = () => {
+
     return (
         <>
-            asdasd
+            Reserving
             <table>
                 <tr>
                     <td>
@@ -43,4 +44,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Reserving
