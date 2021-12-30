@@ -13,7 +13,10 @@ import './assets/css/grid.css'
 import './assets/css/theme.css'
 import './assets/css/index.css'
 
-import Layout from './components/layout/Layout'
+import "./styles/index.css"
+import "./styles/tailwind.css"
+
+import Routing from './components/Routing';
 
 const store = createStore(
   rootReducer
@@ -24,7 +27,7 @@ document.title = 'Tua CRM'
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <Layout />
+      <Routing />
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')
