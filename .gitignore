@@ -3,4 +3,3 @@ node_modules
 .gitattributes
 .env
 rest.rest
-package.json

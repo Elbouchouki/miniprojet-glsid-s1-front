@@ -1,0 +1,26 @@
+.landing-container {
+  height: 100vh;
+  background: linear-gradient(
+    45deg,
+    rgba(66, 183, 245, 0.8) 0%,
+    rgba(66, 245, 189, 0.4) 100%
+  );
+}
+.landing-main {
+  height: 100%;
+}
+
+.landing-form {
+  width: 400px;
+}
+.landing-nav {
+  background-color: whitesmoke;
+}
+
+.landing-footer {
+  height: 50px;
+  background-color: whitesmoke;
+}
+.landing-footer-main {
+  height: 100%;
+}
