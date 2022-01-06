@@ -5,6 +5,11 @@ const AuthReducer = (state = null, action) => {
         ...state,
         user: action.payload,
       };
+    case "SET_PERMS":
+      return {
+        ...state,
+        permissions: action.payload,
+      };
     case "SET_TOKEN":
       return {
         ...state,
@@ -14,6 +19,8 @@ const AuthReducer = (state = null, action) => {
       return {
         state: action.payload,
       };
+    case "GET_PERMS":
+      return state.permissions;
     case "GET_USER":
       return state.user;
     case "GET_TOKEN":

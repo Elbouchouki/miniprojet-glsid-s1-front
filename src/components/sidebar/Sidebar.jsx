@@ -8,6 +8,8 @@ import logo from '../../assets/images/logo.png'
 
 import sidebar_items from '../../assets/JsonData/sidebar_routes.json'
 
+import { useLocation } from 'react-router-dom'
+
 const SidebarItem = props => {
 
     const active = props.active ? 'active' : ''
@@ -25,8 +27,8 @@ const SidebarItem = props => {
 }
 
 const Sidebar = (props) => {
-
-    const activeItem = sidebar_items.findIndex(item => item.route === props.path)
+    const location = useLocation();
+    const activeItem = sidebar_items.findIndex(item => item.route === location.pathname)
     return (
         <div className='sidebar'>
             <div className="sidebar__logo">

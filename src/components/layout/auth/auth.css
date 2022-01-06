@@ -1,5 +1,7 @@
 .auth-container {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
   background: linear-gradient(
     45deg,
     rgba(66, 183, 245, 0.8) 0%,
@@ -10,9 +12,6 @@
   height: 100%;
 }
 
-.auth-form {
-  width: 400px;
-}
 .auth-nav {
   background-color: whitesmoke;
 }

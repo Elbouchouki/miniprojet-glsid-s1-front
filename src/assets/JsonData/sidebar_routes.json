@@ -1,41 +1,41 @@
 [
     {
-        "display_name": "Accueil",
-        "route": "/",
+        "display_name": "Dashboard",
+        "route": "/admin",
         "icon": "bx bx-category-alt",
         "dev": false
     },
     {
-        "display_name": "Tickets",
-        "route": "/tickets",
-        "icon": "bx bxs-coupon",
+        "display_name": "Patients",
+        "route": "/patients",
+        "icon": "bx bx-street-view",
         "role":"show_recu_normal",
         "dev": false
     },
     {
-        "display_name": "Abonnements",
-        "route": "/abonnés",
-        "icon": "bx bx-credit-card",
+        "display_name": "Infirmiers",
+        "route": "/infirmiers",
+        "icon": "bx bx-capsule",
         "role":"show_recu_recharge_abonne",
         "dev": false
     },
     {
-        "display_name": "Bilans",
-        "route": "/bilans",
-        "icon": "bx bxs-note",
+        "display_name": "Medecins",
+        "route": "/medecins",
+        "icon": "bx bx-bug-alt",
         "role":"show_bilan",
         "dev": false
     },
     {
-        "display_name": "Traffic",
-        "route": "/traffic",
-        "icon": "bx bx-transfer",
+        "display_name": "Reservations",
+        "route": "/reservations",
+        "icon": "bx bx-calendar",
         "role":"show_traffic",
         "dev": true
     },
     {
-        "display_name": "Mouvements",
-        "route": "/mouvements",
+        "display_name": "Paramétrage",
+        "route": "/parametrage",
         "icon": "bx bxs-traffic-barrier",
         "role":"show_mouvement",
         "dev": false
